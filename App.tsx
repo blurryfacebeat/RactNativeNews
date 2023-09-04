@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { type FC } from 'react';
-import { Text, View } from 'react-native';
+import { Text, View } from 'react-native'
 
 const App: FC = () => {
   return (
