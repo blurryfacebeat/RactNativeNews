@@ -14,7 +14,11 @@ const RouterProvider: FC = () => {
   return (
     <NavigationContainer>
       <Navigator>
-        <Screen name={router.homepage} component={HomePage} />
+        <Screen
+          name={router.homepage}
+          component={HomePage}
+          options={{ title: 'Главная' }}
+        />
       </Navigator>
     </NavigationContainer>
   );
