@@ -1,7 +1,7 @@
 import HttpClient from '../HttpClient';
 
 const BaseHttpClient = new HttpClient({
-  baseURL: 'https://oauth.reddit.com/api/v1',
+  baseURL: 'https://saurav.tech/NewsAPI',
 });
 
 export default BaseHttpClient;
