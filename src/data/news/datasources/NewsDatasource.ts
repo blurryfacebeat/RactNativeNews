@@ -1,12 +1,15 @@
 import NewsModel from '../../../domain/models/NewsModel';
-import { type INewsDatasource } from '../../../domain/news/INewsDatasource';
-import { type IHttpClient } from '../../../modules/HttpClient.types';
+import {
+  type INewsDatasource,
+  type TNewGetBySourceResponse,
+} from '../../../domain/news/INewsDatasource';
+import { type IHttpClient } from '../../../modules/HttpClient/HttpClient.types';
 import validateNewsResponse from '../validation/newsValidation';
 
 class NewsDatasource implements INewsDatasource {
   constructor(private readonly httpClient: IHttpClient) {}
 
-  getBySource(source: string): NewsModel[] {
+  async getBySource(source: string): TNewGetBySourceResponse {
     const response = this.httpClient.get(`/everything/${source}.json`);
 
     const { articles } = validateNewsResponse(response);
